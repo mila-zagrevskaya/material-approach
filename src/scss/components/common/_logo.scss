@@ -1,0 +1,36 @@
+.logo {
+  text-decoration: none;
+  display: block;
+  padding: 30px 27px;
+  padding-bottom: 23px;
+  margin: 0;
+  -webkit-transition: all 0.25s ease-in-out, -webkit-transform 0.25s 0.25s;
+  -moz-transition: all 0.25s ease-in-out, -moz-transform 0.25s 0.25s;
+  -ms-transition: all 0.25s ease-in-out, -ms-transform 0.25s 0.25s;
+  transition: all 0.25s ease-in-out, transform 0.25s 0.25s;
+}
+
+.logo-img {
+  display: block;
+  width: 100px;
+  -webkit-transition: all 0.1s 0.1s, -webkit-transform 0.1s 0.1s;
+  -moz-transition: all 0.1s 0.1s, -moz-transform 0.1s 0.1s;
+  -ms-transition: all 0.1s 0.1s, -ms-transform 0.1s 0.1s;
+  transition: all 0.1s 0.1s, transform 0.1s 0.1s;
+}
+
+.is-large-logo {
+  .is-closed-menu & {
+    display: none;
+  }
+}
+
+.is-small-logo {
+  display: none;
+
+  .is-closed-menu & {
+    display: block;
+    width: 57px;
+    padding-right: 10px;
+  }
+}

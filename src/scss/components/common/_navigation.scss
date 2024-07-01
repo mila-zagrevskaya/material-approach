@@ -1,0 +1,117 @@
+.navigation {
+  flex: 1 1 auto;
+  background-color: $aside-color-two;
+  padding-top: 50px;
+  z-index: 555;
+}
+
+.navigation-list,
+.drop-menu {
+  list-style: none;
+  line-height: 47px;
+  padding: 2px 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.drop-menu {
+  background-color: $aside-color;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  display: none;
+  opacity: 0;
+}
+
+.is-accordion-open {
+  .drop-menu {
+    display: block;
+    opacity: 1;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+}
+
+.icon {
+  display: block;
+  width: 0;
+  height: 0;
+  &:before,
+  &:after {
+    left: 35px;
+    top: 10px;
+    font-size: 22px;
+    line-height: 20px;
+    position: absolute;
+    color: $aside-text;
+    -webkit-transition: all 0.1s 0.1s, -webkit-transform 0.1s 0.1s;
+    -moz-transition: all 0.1s 0.1s, -moz-transform 0.1s 0.1s;
+    -ms-transition: all 0.1s 0.1s, -ms-transform 0.1s 0.1s;
+    transition: all 0.1s 0.1s, transform 0.1s 0.1s;
+  }
+}
+
+.navigation-link,
+.drop-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding-left: 80px;
+  color: $aside-text;
+  -webkit-transition: all 0.1s 0.1s, -webkit-transform 0.1s 0.1s;
+  -moz-transition: all 0.1s 0.1s, -moz-transform 0.1s 0.1s;
+  -ms-transition: all 0.1s 0.1s, -ms-transform 0.1s 0.1s;
+  transition: all 0.1s 0.1s, transform 0.1s 0.1s;
+  & span {
+    white-space: nowrap;
+  }
+
+  &:hover {
+    color: #fff;
+    & .icon {
+      &:before,
+      &:after {
+        color: #fff;
+      }
+    }
+  }
+  .is-closed-menu & {
+    padding-left: 100px;
+  }
+}
+
+.navigation-link {
+  .is-active & {
+    color: red;
+  }
+}
+
+.is-active {
+  color: #fff;
+
+  .icon {
+    &:before,
+    &:after {
+      color: #fff;
+    }
+  }
+
+  .is-closed-menu & {
+    background-color: $aside-color;
+    color: #fff;
+  }
+}
+
+.icon-cheveron-down,
+.icon-cheveron-up {
+  &:after {
+    left: 87%;
+    top: 14px;
+
+    .is-closed-menu & {
+      display: none;
+    }
+  }
+}

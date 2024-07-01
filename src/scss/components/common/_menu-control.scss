@@ -1,0 +1,30 @@
+.nav-toggle {
+  padding:  0;
+  height: 30px;
+  width: 30px;
+  font-size: 18px;
+  color: $icons-color;
+  border: none;
+  background: none;
+  z-index: 201;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:before {
+    font-size: 30px;
+  }
+
+  &:hover:before {
+    color:#000;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .is-closed-menu & {
+    left: 140px;
+  }
+}

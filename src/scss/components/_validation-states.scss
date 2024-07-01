@@ -1,0 +1,187 @@
+.validation-states {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
+}
+
+.validation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-done {
+  &:before {
+    position: absolute;
+    top: 15px;
+    right: 0;
+    display: none;
+  }
+}
+
+.validation-bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.validation-bar:before,
+.validation-bar:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.16);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.validation-bar:before {
+  left: 50%;
+}
+
+.validation-bar:after {
+  right: 50%;
+}
+
+.warning,
+.warning-with-icon {
+  & ~ .icon-done {
+    &:before {
+      color: $warning-valid-color;
+    }
+  }
+
+  & ~ .validation-bar:before,
+  & ~ .validation-bar:after {
+    border-bottom: 2px solid $warning-valid-color;
+  }
+}
+
+.success-state,
+.success-with-icon {
+  & ~ .icon-done {
+    &:before {
+      color: $success-valid-field;
+    }
+  }
+
+  & ~ .validation-bar:before,
+  & ~ .validation-bar:after {
+    border-bottom: 2px solid $success-valid-field;
+  }
+}
+
+.error-state,
+.error-with-icon {
+  & ~ .icon-done {
+    &:before {
+      color: $error-color;
+    }
+  }
+
+  & ~ .validation-bar:before,
+  & ~ .validation-bar:after {
+    border-bottom: 2px solid $error-color;
+  }
+}
+
+.validation-input {
+  flex-basis: 100%;
+  align-self: flex-end;
+}
+
+.validation-input-extend {
+  align-self: flex-end;
+}
+
+.cent {
+  font-size: 10px;
+  vertical-align: bottom;
+}
+
+.dollars,
+.username,
+.checkbox {
+  & ~ .form-label {
+    left: 40px;
+  }
+}
+
+.validation-input-icon {
+  position: relative;
+  padding-right: 20px;
+  width: 25px;
+  vertical-align: bottom;
+
+  .icon-dollar,
+  .icon-user {
+    position: absolute;
+    bottom: 0;
+    font-size: 18px;
+    color: $text-color;
+  }
+
+  .icon-done {
+    &:before {
+      top: 10px;
+      left: 0;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.validation-check-name {
+  padding-right: 20px;
+  display: block;
+  cursor: pointer;
+}
+
+.validation-check-name::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border: 1px solid $text-color;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+input[type="checkbox"]:checked + .validation-check-name::before {
+  content: " \e90f";
+  color: $text-color;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.validation-button {
+  width: 50px;
+  padding: 5px 10px;
+  margin-left: 5px;
+  background: $buttons-color;
+  color: $text-color;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background: $aside-text;
+    color: #fff;
+  }
+}
+
+.validation-button-text {
+  text-transform: uppercase;
+}

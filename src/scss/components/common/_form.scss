@@ -1,0 +1,125 @@
+.form {
+  flex-basis: 20%;
+  min-width: 25%;
+  background-color: #fff;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.16);
+  padding: 54px 44px 34px;
+  transition: all 0.5s ease-in-out;
+  margin-left: 60px;
+
+  &:first-child {
+    margin-left: 0px;
+  }
+
+  @media (max-width: $breakpoint-xl) {
+    min-width: 35%;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    min-width: 45%;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 1164px) {
+    min-width: 45%;
+    margin-left: 25px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    min-width: 75%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    min-width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
+
+.form-label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.editor-help-text {
+  &:after {
+    content: "";
+  }
+}
+
+.form-group {
+  position: relative;
+  padding: 3px 0;
+  margin-bottom: 20px;
+
+  .names-group & {
+    width: 45%;
+    flex-basis: 49%;
+  }
+}
+
+.form-control {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.16);
+  padding: 5px 0;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #fff;
+
+    & ~ .bar:before,
+    & ~ .bar:after,
+    & ~ .validation-bar:before,
+    & ~ .validation-bar:after {
+      width: 50%;
+    }
+  }
+
+  &:focus ~ .form-label {
+    top: -10px;
+    font-size: 10px;
+    color: $decorate-color;
+  }
+
+  &:focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  &:focus ~ .help-text {
+    &:after {
+      content: "Help text";
+      font-size: 10px;
+      position: absolute;
+      right: 3px;
+      bottom: -10px;
+      height: 12px;
+    }
+  }
+
+  &:focus ~ .icon-done {
+    &:before {
+      display: block;
+    }
+  }
+
+  &.is-large {
+    font-size: 18px;
+  }
+
+  &.is-small {
+    font-size: 12px;
+  }
+}

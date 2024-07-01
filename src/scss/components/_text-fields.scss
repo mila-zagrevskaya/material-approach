@@ -1,0 +1,80 @@
+.editor {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-md) {
+    justify-content: center;
+  }
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar:before,
+.bar:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  bottom: 0;
+  border-bottom: 2px solid $decorate-color;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.editor-tooltip {
+  visibility: hidden;
+  background-color: $background-color;
+  color: $decorate-color;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  bottom: 80%;
+  left: 80%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: $background-color transparent transparent;
+  }
+}
+
+.editor-textarea {
+  resize: none;
+}
+
+.form-group {
+  &:hover .editor-tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.editor-select {
+  background-color: #fff;
+  color: $text-color;
+  width: 100%;
+}
